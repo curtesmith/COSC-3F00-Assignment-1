@@ -1,7 +1,8 @@
-#include "Coefficient.h"
-#include "Exponent.h"
 #ifndef NODE_H
 #define	NODE_H
+
+#include "Coefficient.h"
+#include "Exponent.h"
 
 class Node {
 public:

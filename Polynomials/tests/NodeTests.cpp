@@ -1,10 +1,3 @@
-/*
- * File:   NodeTests.cpp
- * Author: Curtis
- *
- * Created on 4-Oct-2013, 10:39:51 PM
- */
-
 #include "NodeTests.h"
 #include "../Node.h"
 #include <cstring>
