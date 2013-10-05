@@ -39,6 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Exponent.o \
 	${OBJECTDIR}/LinkedList.o \
 	${OBJECTDIR}/Node.o \
+	${OBJECTDIR}/Polynomial.o \
 	${OBJECTDIR}/main.o
 
 # Test Directory
@@ -49,7 +50,8 @@ TESTFILES= \
 	${TESTDIR}/TestFiles/f2 \
 	${TESTDIR}/TestFiles/f4 \
 	${TESTDIR}/TestFiles/f3 \
-	${TESTDIR}/TestFiles/f1
+	${TESTDIR}/TestFiles/f1 \
+	${TESTDIR}/TestFiles/f5
 
 # C Compiler Flags
 CFLAGS=
@@ -97,6 +99,11 @@ ${OBJECTDIR}/Node.o: Node.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Node.o Node.cpp
 
+${OBJECTDIR}/Polynomial.o: Polynomial.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Polynomial.o Polynomial.cpp
+
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
@@ -122,6 +129,10 @@ ${TESTDIR}/TestFiles/f3: ${TESTDIR}/tests/LinkedListTests.o ${TESTDIR}/tests/Lin
 ${TESTDIR}/TestFiles/f1: ${TESTDIR}/tests/NodeTests.o ${TESTDIR}/tests/NodeTestsRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} `cppunit-config --libs` `cppunit-config --libs`   
+
+${TESTDIR}/TestFiles/f5: ${TESTDIR}/tests/PolynomialTests.o ${TESTDIR}/tests/PolynomialTestsRunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f5 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
 
 ${TESTDIR}/tests/CoefficientTests.o: tests/CoefficientTests.cpp 
@@ -170,6 +181,18 @@ ${TESTDIR}/tests/NodeTestsRunner.o: tests/NodeTestsRunner.cpp
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} $@.d
 	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I\"../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/src/cppunit\" -I\;. `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/NodeTestsRunner.o tests/NodeTestsRunner.cpp
+
+
+${TESTDIR}/tests/PolynomialTests.o: tests/PolynomialTests.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} $@.d
+	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I\"../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/src/cppunit\" -I\;. `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/PolynomialTests.o tests/PolynomialTests.cpp
+
+
+${TESTDIR}/tests/PolynomialTestsRunner.o: tests/PolynomialTestsRunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} $@.d
+	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I\"../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/src/cppunit\" -I\;. `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/PolynomialTestsRunner.o tests/PolynomialTestsRunner.cpp
 
 
 ${OBJECTDIR}/Coefficient_nomain.o: ${OBJECTDIR}/Coefficient.o Coefficient.cpp 
@@ -224,6 +247,19 @@ ${OBJECTDIR}/Node_nomain.o: ${OBJECTDIR}/Node.o Node.cpp
 	    ${CP} ${OBJECTDIR}/Node.o ${OBJECTDIR}/Node_nomain.o;\
 	fi
 
+${OBJECTDIR}/Polynomial_nomain.o: ${OBJECTDIR}/Polynomial.o Polynomial.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Polynomial.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Polynomial_nomain.o Polynomial.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Polynomial.o ${OBJECTDIR}/Polynomial_nomain.o;\
+	fi
+
 ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/main.o`; \
@@ -245,6 +281,7 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 	    ${TESTDIR}/TestFiles/f4 || true; \
 	    ${TESTDIR}/TestFiles/f3 || true; \
 	    ${TESTDIR}/TestFiles/f1 || true; \
+	    ${TESTDIR}/TestFiles/f5 || true; \
 	else  \
 	    ./${TEST} || true; \
 	fi
