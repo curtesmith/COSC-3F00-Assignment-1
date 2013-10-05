@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/Coefficient.o \
 	${OBJECTDIR}/Exponent.o \
+	${OBJECTDIR}/Node.o \
 	${OBJECTDIR}/main.o
 
 # Test Directory
@@ -45,7 +46,8 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 # Test Files
 TESTFILES= \
 	${TESTDIR}/TestFiles/f2 \
-	${TESTDIR}/TestFiles/f4
+	${TESTDIR}/TestFiles/f4 \
+	${TESTDIR}/TestFiles/f1
 
 # C Compiler Flags
 CFLAGS=
@@ -83,6 +85,11 @@ ${OBJECTDIR}/Exponent.o: Exponent.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Exponent.o Exponent.cpp
 
+${OBJECTDIR}/Node.o: Node.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Node.o Node.cpp
+
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
@@ -100,6 +107,10 @@ ${TESTDIR}/TestFiles/f2: ${TESTDIR}/tests/CoefficientTests.o ${TESTDIR}/tests/Co
 ${TESTDIR}/TestFiles/f4: ${TESTDIR}/tests/ExponentTests.o ${TESTDIR}/tests/ExponentTestsRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f4 $^ ${LDLIBSOPTIONS} `cppunit-config --libs` `cppunit-config --libs`   
+
+${TESTDIR}/TestFiles/f1: ${TESTDIR}/tests/NodeTests.o ${TESTDIR}/tests/NodeTestsRunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} `cppunit-config --libs` `cppunit-config --libs`   
 
 
 ${TESTDIR}/tests/CoefficientTests.o: tests/CoefficientTests.cpp 
@@ -124,6 +135,18 @@ ${TESTDIR}/tests/ExponentTestsRunner.o: tests/ExponentTestsRunner.cpp
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} $@.d
 	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I\"../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/src/cppunit\" -I\;. `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/ExponentTestsRunner.o tests/ExponentTestsRunner.cpp
+
+
+${TESTDIR}/tests/NodeTests.o: tests/NodeTests.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} $@.d
+	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I\"../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/src/cppunit\" -I\;. `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/NodeTests.o tests/NodeTests.cpp
+
+
+${TESTDIR}/tests/NodeTestsRunner.o: tests/NodeTestsRunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} $@.d
+	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I\"../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/src/cppunit\" -I\;. `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/NodeTestsRunner.o tests/NodeTestsRunner.cpp
 
 
 ${OBJECTDIR}/Coefficient_nomain.o: ${OBJECTDIR}/Coefficient.o Coefficient.cpp 
@@ -152,6 +175,19 @@ ${OBJECTDIR}/Exponent_nomain.o: ${OBJECTDIR}/Exponent.o Exponent.cpp
 	    ${CP} ${OBJECTDIR}/Exponent.o ${OBJECTDIR}/Exponent_nomain.o;\
 	fi
 
+${OBJECTDIR}/Node_nomain.o: ${OBJECTDIR}/Node.o Node.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/Node.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Node_nomain.o Node.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/Node.o ${OBJECTDIR}/Node_nomain.o;\
+	fi
+
 ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/main.o`; \
@@ -171,6 +207,7 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 	then  \
 	    ${TESTDIR}/TestFiles/f2 || true; \
 	    ${TESTDIR}/TestFiles/f4 || true; \
+	    ${TESTDIR}/TestFiles/f1 || true; \
 	else  \
 	    ./${TEST} || true; \
 	fi
