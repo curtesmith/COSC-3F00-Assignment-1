@@ -33,9 +33,9 @@ build/Debug/MinGW-Windows/tests/tests/LinkedListTests.o: \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/extensions/TestNamer.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/extensions/TestSuiteBuilderContext.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/portability/CppUnitMap.h \
+ tests/../Node.h tests/../Coefficient.h tests/../Exponent.h \
  tests/../LinkedList.h tests/../Node.h tests/../Coefficient.h \
- tests/../Exponent.h tests/../Coefficient.h tests/../Exponent.h \
- tests/../Node.h
+ tests/../Exponent.h
 
 tests/LinkedListTests.h:
 
@@ -105,6 +105,12 @@ tests/LinkedListTests.h:
 
 ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/portability/CppUnitMap.h:
 
+tests/../Node.h:
+
+tests/../Coefficient.h:
+
+tests/../Exponent.h:
+
 tests/../LinkedList.h:
 
 tests/../Node.h:
@@ -112,9 +118,3 @@ tests/../Node.h:
 tests/../Coefficient.h:
 
 tests/../Exponent.h:
-
-tests/../Coefficient.h:
-
-tests/../Exponent.h:
-
-tests/../Node.h:

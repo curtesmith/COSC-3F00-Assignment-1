@@ -9,8 +9,11 @@ public:
     virtual ~LinkedList();
     Node* getRootNode();
     void setRootNode(Node* rootNode);
+    void addNode(Node* node);
 private:
     Node* root;
+    Node* current;
+    Node* getLastNode();
 };
 
 #endif	/* LINKEDLIST_H */
