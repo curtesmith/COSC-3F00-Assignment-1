@@ -3,6 +3,7 @@
 LinkedList::LinkedList() {
 }
 
+
 LinkedList::~LinkedList() {
 }
 

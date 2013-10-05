@@ -6,7 +6,6 @@ public:
     LinkedList();
     virtual ~LinkedList();
 private:
-
 };
 
 #endif	/* LINKEDLIST_H */
