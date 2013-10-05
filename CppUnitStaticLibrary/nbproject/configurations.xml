@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="89">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="CppUnitStaticLibrary"
+                     displayName="CppUnitStaticLibrary"
+                     projectFiles="true">
+        <itemPath>AdditionalMessage.cpp</itemPath>
+        <itemPath>Asserter.cpp</itemPath>
+        <itemPath>BeOsDynamicLibraryManager.cpp</itemPath>
+        <itemPath>BriefTestProgressListener.cpp</itemPath>
+        <itemPath>CompilerOutputter.cpp</itemPath>
+        <itemPath>DefaultProtector.cpp</itemPath>
+        <itemPath>DefaultProtector.h</itemPath>
+        <itemPath>DllMain.cpp</itemPath>
+        <itemPath>DynamicLibraryManager.cpp</itemPath>
+        <itemPath>DynamicLibraryManagerException.cpp</itemPath>
+        <itemPath>Exception.cpp</itemPath>
+        <itemPath>Makefile</itemPath>
+        <itemPath>Makefile.am</itemPath>
+        <itemPath>Makefile.in</itemPath>
+        <itemPath>Message.cpp</itemPath>
+        <itemPath>PlugInManager.cpp</itemPath>
+        <itemPath>PlugInParameters.cpp</itemPath>
+        <itemPath>Protector.cpp</itemPath>
+        <itemPath>ProtectorChain.cpp</itemPath>
+        <itemPath>ProtectorChain.h</itemPath>
+        <itemPath>ProtectorContext.h</itemPath>
+        <itemPath>RepeatedTest.cpp</itemPath>
+        <itemPath>ShlDynamicLibraryManager.cpp</itemPath>
+        <itemPath>SourceLine.cpp</itemPath>
+        <itemPath>StringTools.cpp</itemPath>
+        <itemPath>SynchronizedObject.cpp</itemPath>
+        <itemPath>Test.cpp</itemPath>
+        <itemPath>TestAssert.cpp</itemPath>
+        <itemPath>TestCase.cpp</itemPath>
+        <itemPath>TestCaseDecorator.cpp</itemPath>
+        <itemPath>TestComposite.cpp</itemPath>
+        <itemPath>TestDecorator.cpp</itemPath>
+        <itemPath>TestFactoryRegistry.cpp</itemPath>
+        <itemPath>TestFailure.cpp</itemPath>
+        <itemPath>TestLeaf.cpp</itemPath>
+        <itemPath>TestNamer.cpp</itemPath>
+        <itemPath>TestPath.cpp</itemPath>
+        <itemPath>TestPlugInDefaultImpl.cpp</itemPath>
+        <itemPath>TestResult.cpp</itemPath>
+        <itemPath>TestResultCollector.cpp</itemPath>
+        <itemPath>TestRunner.cpp</itemPath>
+        <itemPath>TestSetUp.cpp</itemPath>
+        <itemPath>TestSuccessListener.cpp</itemPath>
+        <itemPath>TestSuite.cpp</itemPath>
+        <itemPath>TestSuiteBuilderContext.cpp</itemPath>
+        <itemPath>TextOutputter.cpp</itemPath>
+        <itemPath>TextTestProgressListener.cpp</itemPath>
+        <itemPath>TextTestResult.cpp</itemPath>
+        <itemPath>TextTestRunner.cpp</itemPath>
+        <itemPath>TypeInfoHelper.cpp</itemPath>
+        <itemPath>UnixDynamicLibraryManager.cpp</itemPath>
+        <itemPath>Win32DynamicLibraryManager.cpp</itemPath>
+        <itemPath>XmlDocument.cpp</itemPath>
+        <itemPath>XmlElement.cpp</itemPath>
+        <itemPath>XmlOutputter.cpp</itemPath>
+        <itemPath>XmlOutputterHook.cpp</itemPath>
+        <itemPath>cppunit.dsp</itemPath>
+        <itemPath>cppunit_dll.dsp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>C:\Program Files (x86)\cppunit-1.13.1\src\cppunit</Elem>
+    <Elem>C:\Users\Curtis\Documents\NetBeansProjects\COSC-3F00-Assignment-1\CppUnitStaticLibrary</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>../../../../../../Program Files (x86)/cppunit-1.13.1/include</pElem>
+          </incDir>
+          <useLinkerLibraries>false</useLinkerLibraries>
+        </ccTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="AdditionalMessage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Asserter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BeOsDynamicLibraryManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BriefTestProgressListener.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CompilerOutputter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DefaultProtector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DefaultProtector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DllMain.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DynamicLibraryManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DynamicLibraryManagerException.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Exception.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Makefile.am" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Makefile.in" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Message.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PlugInManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PlugInParameters.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ProtectorChain.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ProtectorChain.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ProtectorContext.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="RepeatedTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ShlDynamicLibraryManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SourceLine.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StringTools.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SynchronizedObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestAssert.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestCase.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestCaseDecorator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestComposite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestDecorator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestFactoryRegistry.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestFailure.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestLeaf.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestNamer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestPath.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestPlugInDefaultImpl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestResult.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestResultCollector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestSetUp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestSuccessListener.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestSuite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestSuiteBuilderContext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TextOutputter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TextTestProgressListener.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TextTestResult.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TextTestRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TypeInfoHelper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UnixDynamicLibraryManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Win32DynamicLibraryManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="XmlDocument.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="XmlElement.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="XmlOutputter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="XmlOutputterHook.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="cppunit.dsp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cppunit_dll.dsp" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+      <item path="AdditionalMessage.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Asserter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BeOsDynamicLibraryManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BriefTestProgressListener.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CompilerOutputter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DefaultProtector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DefaultProtector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="DllMain.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DynamicLibraryManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="DynamicLibraryManagerException.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Exception.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Makefile.am" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Makefile.in" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Message.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PlugInManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PlugInParameters.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ProtectorChain.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ProtectorChain.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ProtectorContext.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="RepeatedTest.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ShlDynamicLibraryManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SourceLine.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StringTools.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="SynchronizedObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Test.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestAssert.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestCase.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestCaseDecorator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestComposite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestDecorator.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestFactoryRegistry.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestFailure.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestLeaf.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestNamer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestPath.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestPlugInDefaultImpl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestResult.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestResultCollector.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestSetUp.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestSuccessListener.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestSuite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TestSuiteBuilderContext.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TextOutputter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TextTestProgressListener.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TextTestResult.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TextTestRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="TypeInfoHelper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="UnixDynamicLibraryManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Win32DynamicLibraryManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="XmlDocument.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="XmlElement.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="XmlOutputter.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="XmlOutputterHook.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="cppunit.dsp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="cppunit_dll.dsp" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
