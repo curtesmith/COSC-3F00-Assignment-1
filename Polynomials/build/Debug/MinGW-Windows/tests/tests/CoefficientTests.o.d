@@ -1,5 +1,5 @@
-build/Debug/MinGW-Windows/tests/tests/Coefficient_ctor.o: \
- tests/Coefficient_ctor.cpp tests/Coefficient_ctor.h \
+build/Debug/MinGW-Windows/tests/tests/CoefficientTests.o: \
+ tests/CoefficientTests.cpp tests/CoefficientTests.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/extensions/HelperMacros.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/TestCaller.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/Exception.h \
@@ -35,7 +35,7 @@ build/Debug/MinGW-Windows/tests/tests/Coefficient_ctor.o: \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/portability/CppUnitMap.h \
  tests/../Coefficient.h
 
-tests/Coefficient_ctor.h:
+tests/CoefficientTests.h:
 
 ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/extensions/HelperMacros.h:
 

@@ -1,5 +1,5 @@
-build/Debug/MinGW-Windows/tests/tests/Coefficient_toInt.o: \
- tests/Coefficient_toInt.cpp tests/Coefficient_toInt.h \
+build/Debug/MinGW-Windows/tests/tests/ExponentTests.o: \
+ tests/ExponentTests.cpp tests/ExponentTests.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/extensions/HelperMacros.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/TestCaller.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/Exception.h \
@@ -33,9 +33,9 @@ build/Debug/MinGW-Windows/tests/tests/Coefficient_toInt.o: \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/extensions/TestNamer.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/extensions/TestSuiteBuilderContext.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/portability/CppUnitMap.h \
- tests/../Coefficient.h
+ tests/../Exponent.h
 
-tests/Coefficient_toInt.h:
+tests/ExponentTests.h:
 
 ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/extensions/HelperMacros.h:
 
@@ -103,4 +103,4 @@ tests/Coefficient_toInt.h:
 
 ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/portability/CppUnitMap.h:
 
-tests/../Coefficient.h:
+tests/../Exponent.h:

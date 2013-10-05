@@ -1,10 +1,3 @@
-/*
- * File:   newtestrunner1.cpp
- * Author: Curtis
- *
- * Created on 4-Oct-2013, 8:43:59 PM
- */
-
 #include <cppunit/BriefTestProgressListener.h>
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>

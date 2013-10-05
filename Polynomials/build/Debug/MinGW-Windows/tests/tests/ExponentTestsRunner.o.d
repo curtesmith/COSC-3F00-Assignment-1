@@ -1,5 +1,5 @@
-build/Debug/MinGW-Windows/tests/tests/newtestrunner1.o: \
- tests/newtestrunner1.cpp \
+build/Debug/MinGW-Windows/tests/tests/ExponentTestsRunner.o: \
+ tests/ExponentTestsRunner.cpp \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/BriefTestProgressListener.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/TestListener.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/Portability.h \
