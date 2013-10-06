@@ -3,30 +3,41 @@
 #include <cstring>
 
 LinkedList::LinkedList() {
-    this->root = NULL;
+    addressOfRootNode = NULL;
 }
-
 
 LinkedList::~LinkedList() {
 }
 
-Node* LinkedList::getRootNode() {
-    return this->root;
+Node** LinkedList::getAddressOfRootNodePointer() {
+    return &addressOfRootNode;
 }
 
 void LinkedList::setRootNode(Node* rootNode) {
-    this->root = rootNode;
+    addressOfRootNode = rootNode;
 }
 
-void LinkedList::addNode(Node* node){
-    Node* lastNode = getLastNode();
-    lastNode->setNextNode(node);
+void LinkedList::addNode(Node** addressOfNewNodePointer) {
+    Node** addressOfLastNodePointer = getAddressOfLastNodePointer();
+    *addressOfLastNodePointer = *addressOfNewNodePointer;
 }
 
-Node* LinkedList::getLastNode() {
-    Node* node = this->root;
-    while(node->getNextNode() != NULL) {
-        node = node->getNextNode();
+Node** LinkedList::getAddressOfLastNodePointer() {
+    Node** addressOfNodePointer = getAddressOfRootNodePointer();
+
+    while (*addressOfNodePointer != NULL) {
+        addressOfNodePointer = (*addressOfNodePointer)->getAddressOfNextNodePointer();
+    }    
+
+    return addressOfNodePointer;
+}
+
+int LinkedList::size() {
+    int size = 0;
+    Node* node = addressOfRootNode;
+    while (node != NULL) {
+        size++;
+        node = (*node).getAddressOfNextNode();
     }
-    return node;
+    return size;
 }

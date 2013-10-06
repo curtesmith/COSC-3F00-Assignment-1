@@ -8,14 +8,15 @@ class Node {
 public:
     Node(Coefficient* coefficient, Exponent* exponent);
     virtual ~Node();
-    void setNextNode(Node* nextNode);
-    Node* getNextNode();
-    Coefficient* getCoefficient();
-    Exponent* getExponent();
+    void setAddressOfNextNode(Node * nextNode);
+    Node* getAddressOfNextNode();
+    Coefficient* getAddressOfCoefficient();
+    Exponent* getAddressOfExponent();
+    Node** getAddressOfNextNodePointer();
 private:
-    Exponent* exponent;
-    Coefficient* coefficient;
-    Node* nextNode;
+    Exponent* addressOfExponent;
+    Coefficient* addressOfCoefficient;
+    Node* addressOfNextNode;
 };
 
 #endif	/* NODE_H */

@@ -1,15 +1,18 @@
 #ifndef EXPONENT_H
 #define	EXPONENT_H
 
+#include <string>
+
 class Exponent {
 public:
     Exponent();
-    Exponent(int value);
+    Exponent(std::string value);
     virtual ~Exponent();
     int toInt();
+    std::string toString();
 private:
-    int value;
-    void init(int value);
+    std::string value;
+    void init(std::string value);
 };
 
 #endif	/* EXPONENT_H */

@@ -1,15 +1,18 @@
 #ifndef COEFFICIENT_H
 #define	COEFFICIENT_H
 
+#include <string>
+
 class Coefficient {
 public:
     Coefficient();
-    Coefficient(int value);    
+    Coefficient(std::string value);   
     virtual ~Coefficient();
     int toInt();
+    std::string toString();
 private:
-    int value;
-    void init(int value);
+    std::string value;
+    void init(std::string value);
 };
 
 #endif	/* COEFFICIENT_H */

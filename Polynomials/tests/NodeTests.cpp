@@ -18,26 +18,27 @@ void NodeTests::tearDown() {
 }
 
 void NodeTests::calling_setNextNode_should_assign_a_value_to_the_nextNode() {
-    Node* sut = createNode(2,3);
-    Node* nextNode = createNode(3,4);
-    sut->setNextNode(nextNode);
-    CPPUNIT_ASSERT(sut->getNextNode() != NULL);
+    Node sut = *createNode("2","3");
+    Node nextNode = *createNode("3","4");
+    sut.setAddressOfNextNode(&nextNode);
+    CPPUNIT_ASSERT(sut.getAddressOfNextNode() != NULL);
 }
 
 void NodeTests::calling_getCoefficient_should_return_the_coefficient_value() {
-    Node* sut = createNode(2,3);
-    Coefficient* coefficient = sut->getCoefficient();
+    Node * sut = createNode("2","3");
+    Coefficient* coefficient = sut->getAddressOfCoefficient();
     CPPUNIT_ASSERT(coefficient->toInt() == 2);
 }
 
 void NodeTests::calling_getExponent_should_return_the_exponent_value() {
-    Node* sut = createNode(2,3);
-    Exponent* exponent = sut->getExponent();
+    Node * sut = createNode("2","3");
+    Exponent* exponent = sut->getAddressOfExponent();
     CPPUNIT_ASSERT(exponent->toInt() == 3);
 }
 
 
-Node* NodeTests::createNode(int coefficient, int exponent) {
-    return new Node(new Coefficient(coefficient), new Exponent(exponent));
+Node * NodeTests::createNode(std::string coefficient, std::string exponent) {
+    Node node (new Coefficient(coefficient), new Exponent(exponent));
+    return &node;
 }
 

@@ -23,7 +23,7 @@ private:
     void calling_setNextNode_should_assign_a_value_to_the_nextNode();
     void calling_getCoefficient_should_return_the_coefficient_value();
     void calling_getExponent_should_return_the_exponent_value();
-    Node* createNode(int coefficient, int exponent);
+    Node * createNode(std::string coefficient, std::string exponent);
 };
 
 #endif	/* NODETESTS_H */

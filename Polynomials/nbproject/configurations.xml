@@ -8,7 +8,9 @@
       <itemPath>Exponent.h</itemPath>
       <itemPath>LinkedList.h</itemPath>
       <itemPath>Node.h</itemPath>
+      <itemPath>PointerHelper.h</itemPath>
       <itemPath>Polynomial.h</itemPath>
+      <itemPath>StringHelper.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -21,7 +23,9 @@
       <itemPath>Exponent.cpp</itemPath>
       <itemPath>LinkedList.cpp</itemPath>
       <itemPath>Node.cpp</itemPath>
+      <itemPath>PointerHelper.cpp</itemPath>
       <itemPath>Polynomial.cpp</itemPath>
+      <itemPath>StringHelper.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -68,6 +72,14 @@
         <itemPath>tests/PolynomialTests.h</itemPath>
         <itemPath>tests/PolynomialTestsRunner.cpp</itemPath>
       </logicalFolder>
+      <logicalFolder name="f6"
+                     displayName="StringHelperTests"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/StringHelperTests.cpp</itemPath>
+        <itemPath>tests/StringHelperTests.h</itemPath>
+        <itemPath>tests/StringHelperTestsRunner.cpp</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -87,8 +99,10 @@
       </toolsSet>
       <compileType>
         <ccTool>
+          <standard>8</standard>
           <incDir>
             <pElem>../../../../../../Program Files (x86)/cppunit-1.13.1/include</pElem>
+            <pElem>../../../../../../MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits</pElem>
           </incDir>
           <useLinkerLibraries>false</useLinkerLibraries>
         </ccTool>
@@ -114,9 +128,17 @@
       </item>
       <item path="Node.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="PointerHelper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PointerHelper.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Polynomial.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Polynomial.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="StringHelper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StringHelper.h" ex="false" tool="3" flavor2="0">
       </item>
       <folder path="TestFiles">
         <ccTool>
@@ -205,6 +227,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f6">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f6</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/CoefficientTests.cpp" ex="false" tool="1" flavor2="0">
@@ -236,6 +272,12 @@
       <item path="tests/PolynomialTests.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/PolynomialTestsRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/StringHelperTests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/StringHelperTests.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/StringHelperTestsRunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -275,9 +317,17 @@
       </item>
       <item path="Node.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="PointerHelper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="PointerHelper.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Polynomial.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Polynomial.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="StringHelper.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="StringHelper.h" ex="false" tool="3" flavor2="0">
       </item>
       <folder path="TestFiles/f1">
         <cTool>
@@ -359,6 +409,20 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
+      <folder path="TestFiles/f6">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f6</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/CoefficientTests.cpp" ex="false" tool="1" flavor2="0">
@@ -390,6 +454,12 @@
       <item path="tests/PolynomialTests.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/PolynomialTestsRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/StringHelperTests.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/StringHelperTests.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/StringHelperTestsRunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

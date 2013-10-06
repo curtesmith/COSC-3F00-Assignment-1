@@ -7,8 +7,8 @@
 class LinkedListTests : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST_SUITE(LinkedListTests);
 
-    CPPUNIT_TEST(calling_setRootNode_should_assign_the_node_to_the_rootNode);
-    CPPUNIT_TEST(calling_addNode_should_add_the_node_to_the_end_of_the_linkedlist);
+    CPPUNIT_TEST(calling_getLastNodePointer_should_return_a_pointer_to_the_rootPointer);
+    CPPUNIT_TEST(calling_addNode_should_assign_the_node_to_the_rootNode_first);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -20,8 +20,9 @@ public:
 
 private:
     void testMethod();
-    void calling_setRootNode_should_assign_the_node_to_the_rootNode();
+    void calling_addNode_should_assign_the_node_to_the_rootNode_first();
     void calling_addNode_should_add_the_node_to_the_end_of_the_linkedlist();
+    void calling_getLastNodePointer_should_return_a_pointer_to_the_rootPointer();
     Node* createRandomNode();
 };
 

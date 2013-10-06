@@ -1,20 +1,26 @@
 #include "Coefficient.h"
+#include "StringHelper.h"
 
 Coefficient::Coefficient() {
-    init(0);
+    init("0");
 }
 
 Coefficient::~Coefficient() {
 }
 
-Coefficient::Coefficient(int value) {
+
+Coefficient::Coefficient(std::string value) {
     init(value);
 }
 
-void Coefficient::init(int value) {
+void Coefficient::init(std::string value) {
     this->value = value;
 }
 
 int Coefficient::toInt() {
-    return this->value;
+    return StringHelper::convertStringToInt(value);
+}
+
+std::string Coefficient::toString() {
+    return value;
 }

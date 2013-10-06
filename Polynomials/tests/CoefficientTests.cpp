@@ -22,6 +22,6 @@ void CoefficientTests::default_constructor_should_set_value_to_zero() {
 }
 
 void CoefficientTests::toInt_should_convert_and_return_the_value_to_int() {
-    Coefficient coefficient = Coefficient(1);
+    Coefficient coefficient = Coefficient("1");
     CPPUNIT_ASSERT(coefficient.toInt() == 1);
 }

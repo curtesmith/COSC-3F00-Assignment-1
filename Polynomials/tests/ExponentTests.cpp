@@ -22,6 +22,6 @@ void ExponentTests::default_constructor_should_set_value_to_zero() {
 }
 
 void ExponentTests::toInt_should_convert_and_return_the_value_to_int() {
-    Exponent exponent(1);
+    Exponent exponent("1");
     CPPUNIT_ASSERT(exponent.toInt() == 1);
 }

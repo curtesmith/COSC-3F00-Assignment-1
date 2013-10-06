@@ -39,7 +39,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/Exponent.o \
 	${OBJECTDIR}/LinkedList.o \
 	${OBJECTDIR}/Node.o \
+	${OBJECTDIR}/PointerHelper.o \
 	${OBJECTDIR}/Polynomial.o \
+	${OBJECTDIR}/StringHelper.o \
 	${OBJECTDIR}/main.o
 
 # Test Directory
@@ -51,7 +53,8 @@ TESTFILES= \
 	${TESTDIR}/TestFiles/f4 \
 	${TESTDIR}/TestFiles/f3 \
 	${TESTDIR}/TestFiles/f1 \
-	${TESTDIR}/TestFiles/f5
+	${TESTDIR}/TestFiles/f5 \
+	${TESTDIR}/TestFiles/f6
 
 # C Compiler Flags
 CFLAGS=
@@ -97,10 +100,20 @@ ${OBJECTDIR}/Node.o: Node.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Node.o Node.cpp
 
+${OBJECTDIR}/PointerHelper.o: PointerHelper.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/PointerHelper.o PointerHelper.cpp
+
 ${OBJECTDIR}/Polynomial.o: Polynomial.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Polynomial.o Polynomial.cpp
+
+${OBJECTDIR}/StringHelper.o: StringHelper.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/StringHelper.o StringHelper.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -131,6 +144,10 @@ ${TESTDIR}/TestFiles/f1: ${TESTDIR}/tests/NodeTests.o ${TESTDIR}/tests/NodeTests
 ${TESTDIR}/TestFiles/f5: ${TESTDIR}/tests/PolynomialTests.o ${TESTDIR}/tests/PolynomialTestsRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f5 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
+
+${TESTDIR}/TestFiles/f6: ${TESTDIR}/tests/StringHelperTests.o ${TESTDIR}/tests/StringHelperTestsRunner.o ${OBJECTFILES:%.o=%_nomain.o}
+	${MKDIR} -p ${TESTDIR}/TestFiles
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f6 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
 
 ${TESTDIR}/tests/CoefficientTests.o: tests/CoefficientTests.cpp 
@@ -193,6 +210,18 @@ ${TESTDIR}/tests/PolynomialTestsRunner.o: tests/PolynomialTestsRunner.cpp
 	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/PolynomialTestsRunner.o tests/PolynomialTestsRunner.cpp
 
 
+${TESTDIR}/tests/StringHelperTests.o: tests/StringHelperTests.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} $@.d
+	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/StringHelperTests.o tests/StringHelperTests.cpp
+
+
+${TESTDIR}/tests/StringHelperTestsRunner.o: tests/StringHelperTestsRunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} $@.d
+	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/StringHelperTestsRunner.o tests/StringHelperTestsRunner.cpp
+
+
 ${OBJECTDIR}/Coefficient_nomain.o: ${OBJECTDIR}/Coefficient.o Coefficient.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/Coefficient.o`; \
@@ -245,6 +274,19 @@ ${OBJECTDIR}/Node_nomain.o: ${OBJECTDIR}/Node.o Node.cpp
 	    ${CP} ${OBJECTDIR}/Node.o ${OBJECTDIR}/Node_nomain.o;\
 	fi
 
+${OBJECTDIR}/PointerHelper_nomain.o: ${OBJECTDIR}/PointerHelper.o PointerHelper.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/PointerHelper.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/PointerHelper_nomain.o PointerHelper.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/PointerHelper.o ${OBJECTDIR}/PointerHelper_nomain.o;\
+	fi
+
 ${OBJECTDIR}/Polynomial_nomain.o: ${OBJECTDIR}/Polynomial.o Polynomial.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/Polynomial.o`; \
@@ -256,6 +298,19 @@ ${OBJECTDIR}/Polynomial_nomain.o: ${OBJECTDIR}/Polynomial.o Polynomial.cpp
 	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/Polynomial_nomain.o Polynomial.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/Polynomial.o ${OBJECTDIR}/Polynomial_nomain.o;\
+	fi
+
+${OBJECTDIR}/StringHelper_nomain.o: ${OBJECTDIR}/StringHelper.o StringHelper.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	@NMOUTPUT=`${NM} ${OBJECTDIR}/StringHelper.o`; \
+	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
+	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
+	then  \
+	    ${RM} $@.d;\
+	    $(COMPILE.cc) -O2 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/StringHelper_nomain.o StringHelper.cpp;\
+	else  \
+	    ${CP} ${OBJECTDIR}/StringHelper.o ${OBJECTDIR}/StringHelper_nomain.o;\
 	fi
 
 ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp 
@@ -280,6 +335,7 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 	    ${TESTDIR}/TestFiles/f3 || true; \
 	    ${TESTDIR}/TestFiles/f1 || true; \
 	    ${TESTDIR}/TestFiles/f5 || true; \
+	    ${TESTDIR}/TestFiles/f6 || true; \
 	else  \
 	    ./${TEST} || true; \
 	fi

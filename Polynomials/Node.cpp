@@ -2,26 +2,31 @@
 #include <cstring>
 
 Node::Node(Coefficient* coefficient, Exponent* exponent) {
-    this->coefficient = coefficient;
-    this->exponent = exponent;
-    this->nextNode = NULL;
+    addressOfCoefficient = coefficient;
+    addressOfExponent = exponent;
+    addressOfNextNode = NULL;
 }
 
 Node::~Node() {
 }
 
-void Node::setNextNode(Node* nextNode) {
-    this->nextNode = nextNode;
+void Node::setAddressOfNextNode(Node* nextNode) {
+    addressOfNextNode = nextNode;
 }
 
-Node* Node::getNextNode() {
-    return this->nextNode;
+Node* Node::getAddressOfNextNode() {
+    return addressOfNextNode;
 }
 
-Coefficient* Node::getCoefficient() {
-    return this->coefficient;
+Coefficient* Node::getAddressOfCoefficient() {
+    return addressOfCoefficient;
 }
 
-Exponent* Node::getExponent() {
-    return this->exponent;
+Exponent* Node::getAddressOfExponent() {
+    return addressOfExponent;
 }
+
+Node** Node::getAddressOfNextNodePointer() {
+    return &addressOfNextNode;
+}
+
