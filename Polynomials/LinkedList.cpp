@@ -29,6 +29,24 @@ void LinkedList::addNode(Node** addressOfNewNodePointer) {
      */
 }
 
+void LinkedList::insertNode(Node** addressOfNewNodePointer) {
+    Node** addressOfNodePointer = getAddressOfRootNodePointer();
+    while(*addressOfNodePointer != NULL) {      
+        if((*addressOfNewNodePointer)->compareTo(*addressOfNodePointer) == 1) {
+            break;
+        } else if ((*addressOfNewNodePointer)->compareTo(*addressOfNodePointer) == 0) {
+            // add the coefficents of the nodes
+            // update the coefficient of addressOfNode
+            break;
+        } else {
+            addressOfNodePointer = this->getAddressOfNextNodePointer(addressOfNodePointer);
+        }
+    }
+    Node* tmp = *addressOfNodePointer;
+    *addressOfNodePointer = *addressOfNewNodePointer;
+    (*addressOfNewNodePointer)->setAddressOfNextNode(tmp);    
+}
+
 Node** LinkedList::getAddressOfLastNodePointer() {
     Node** addressOfNodePointer = getAddressOfRootNodePointer();
 
@@ -37,6 +55,10 @@ Node** LinkedList::getAddressOfLastNodePointer() {
     }    
 
     return addressOfNodePointer;
+}
+
+Node** LinkedList::getAddressOfNextNodePointer(Node** node) {
+    return (*node)->getAddressOfNextNodePointer();
 }
 
 int LinkedList::size() {

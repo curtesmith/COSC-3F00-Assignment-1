@@ -35,7 +35,7 @@ void Polynomial::fill(std::string s) {
         
         if (parts == MAX_PARTS) {
             Node* addressOfNode = new Node(coefficient, exponent);
-            this->getAddressOfLinkedList()->addNode(&addressOfNode);
+            this->getAddressOfLinkedList()->insertNode(&addressOfNode);
             parts = 0;
         }        
     }  

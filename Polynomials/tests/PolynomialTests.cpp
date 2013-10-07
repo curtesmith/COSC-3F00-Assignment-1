@@ -28,9 +28,10 @@ void PolynomialTests::calling_fill_should_populate_the_nodes_of_the_linked_list(
 }
 
 void PolynomialTests::calling_toString_should_return_a_string_representation() {
-    std::string polynomial = "4 2 5 3";
+    std::string polynomial = "-4 2 5 3 -2 1";
     Polynomial* sut = new Polynomial();
     sut->fill(polynomial);
     std::string result = sut->toString();
-    CPPUNIT_ASSERT(true);
+    //std::cout << "\nresult is {" << result << "}\n";
+    CPPUNIT_ASSERT(result == "5x3 -4x2 -2x1 ");
 }

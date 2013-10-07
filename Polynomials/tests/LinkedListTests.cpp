@@ -24,27 +24,17 @@ void LinkedListTests::calling_getLastNodePointer_should_return_a_pointer_to_the_
     CPPUNIT_ASSERT(sut->getAddressOfRootNodePointer() == sut->getAddressOfLastNodePointer());
 }
 
-void LinkedListTests::calling_addNode_should_assign_the_node_to_the_rootNode_first() {
+Node* LinkedListTests::createNode(std::string coefficient, std::string exponent) {
+    return new Node(new Coefficient(coefficient), new Exponent(exponent));    
+}
+
+void LinkedListTests::calling_insertNode() {
     LinkedList* sut = new LinkedList();
-    Node* rootNode = createRandomNode();
-    sut->addNode(&rootNode);
-    Node** addressOfRootNodePointer = sut->getAddressOfRootNodePointer();
-    CPPUNIT_ASSERT(*addressOfRootNodePointer != NULL);
-}
-
-Node* LinkedListTests::createRandomNode() {
-    Coefficient* coefficient = new Coefficient("2");
-    Exponent* exponent = new Exponent("3");
-    return new Node(coefficient, exponent);
-}
-
-void LinkedListTests::calling_addNode_should_add_the_node_to_the_end_of_the_linkedlist() {
-    LinkedList sut;
-    Node* root = createRandomNode();
-    sut.setRootNode(root);
-    Node* anotherNode = createRandomNode();
-    sut.addNode(&anotherNode);
-    std::cout << "\n sut->size() = {" << sut.size() << "}\n";
-    CPPUNIT_ASSERT(sut.size() == 2);
-    
+    Node* first = createNode("3", "2");
+    Node* second = createNode("2", "3");
+    Node* third = createNode("-1", "1");
+    sut->insertNode(&first);
+    sut->insertNode(&second);
+    sut->insertNode(&third);
+    CPPUNIT_ASSERT(sut->size() == 3);
 }

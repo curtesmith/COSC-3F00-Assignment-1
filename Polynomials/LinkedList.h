@@ -10,8 +10,10 @@ public:
     Node** getAddressOfRootNodePointer();
     void setRootNode(Node* rootNode);
     void addNode(Node** node);
+    void insertNode(Node** newNode);
     int size();
-    Node** getAddressOfLastNodePointer();    
+    Node** getAddressOfLastNodePointer();
+    Node** getAddressOfNextNodePointer(Node** node);
 private:
     Node* addressOfRootNode;
 };
