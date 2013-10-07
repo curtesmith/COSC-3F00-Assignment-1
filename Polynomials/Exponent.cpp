@@ -1,5 +1,6 @@
 #include "Exponent.h"
 #include "StringHelper.h"
+#include <string>
 
 Exponent::Exponent() {
     init("0");
@@ -17,9 +18,9 @@ void Exponent::init(std::string value) {
 }
 
 int Exponent::toInt() {
-    return StringHelper::convertStringToInt(value);
+    return StringHelper::convertStringToInt(this->value);
 }
 
 std::string Exponent::toString() {
-    return value;
+    return this->value;
 }

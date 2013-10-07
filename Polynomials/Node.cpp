@@ -30,3 +30,17 @@ Node** Node::getAddressOfNextNodePointer() {
     return &addressOfNextNode;
 }
 
+int Node::compareTo(Node* anotherNode) {
+    Exponent* me = this->getAddressOfExponent();
+    Exponent* him = anotherNode->getAddressOfExponent();
+    int ime = me->toInt();
+    int ihim = him->toInt();
+    int difference = ime - ihim;
+    
+    if (difference < 0) 
+        return -1;
+    else if (difference > 0)
+        return 1;
+    else 
+        return 0;          
+}

@@ -32,7 +32,5 @@ void PolynomialTests::calling_toString_should_return_a_string_representation() {
     Polynomial* sut = new Polynomial();
     sut->fill(polynomial);
     std::string result = sut->toString();
-    
-    //std::cout << "\n result is {" << result << "}\n";
     CPPUNIT_ASSERT(true);
 }

@@ -13,6 +13,7 @@ public:
     Coefficient* getAddressOfCoefficient();
     Exponent* getAddressOfExponent();
     Node** getAddressOfNextNodePointer();
+    int compareTo(Node* anotherNode);
 private:
     Exponent* addressOfExponent;
     Coefficient* addressOfCoefficient;

@@ -1,6 +1,5 @@
 #include "LinkedList.h"
 #include "Node.h"
-#include <cstring>
 
 LinkedList::LinkedList() {
     addressOfRootNode = NULL;
@@ -20,6 +19,14 @@ void LinkedList::setRootNode(Node* rootNode) {
 void LinkedList::addNode(Node** addressOfNewNodePointer) {
     Node** addressOfLastNodePointer = getAddressOfLastNodePointer();
     *addressOfLastNodePointer = *addressOfNewNodePointer;
+    
+    /* set current node to address of root node
+     * if current node is not null
+     *    if new node is less than current node
+     *       get next node in link list
+     *    else 
+     *       insert the node 
+     */
 }
 
 Node** LinkedList::getAddressOfLastNodePointer() {

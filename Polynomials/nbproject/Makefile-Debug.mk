@@ -141,7 +141,7 @@ ${TESTDIR}/TestFiles/f3: ${TESTDIR}/tests/LinkedListTests.o ${TESTDIR}/tests/Lin
 
 ${TESTDIR}/TestFiles/f1: ${TESTDIR}/tests/NodeTests.o ${TESTDIR}/tests/NodeTestsRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} `cppunit-config --libs` `cppunit-config --libs`   
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} `cppunit-config --libs` `cppunit-config --libs` `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f5: ${TESTDIR}/tests/PolynomialTests.o ${TESTDIR}/tests/PolynomialTestsRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
@@ -191,13 +191,13 @@ ${TESTDIR}/tests/LinkedListTestsRunner.o: tests/LinkedListTestsRunner.cpp
 ${TESTDIR}/tests/NodeTests.o: tests/NodeTests.cpp 
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} $@.d
-	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I../../../../../../MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits -I\"../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/src/cppunit\" -I\;. -std=c++11 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/NodeTests.o tests/NodeTests.cpp
+	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I../../../../../../MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits -I\"../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/src/cppunit\" -I\;. -I. -I. -std=c++11 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/NodeTests.o tests/NodeTests.cpp
 
 
 ${TESTDIR}/tests/NodeTestsRunner.o: tests/NodeTestsRunner.cpp 
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} $@.d
-	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I../../../../../../MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits -I\"../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/src/cppunit\" -I\;. -std=c++11 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/NodeTestsRunner.o tests/NodeTestsRunner.cpp
+	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I../../../../../../MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits -I\"../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/src/cppunit\" -I\;. -I. -I. -std=c++11 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/NodeTestsRunner.o tests/NodeTestsRunner.cpp
 
 
 ${TESTDIR}/tests/PolynomialTests.o: tests/PolynomialTests.cpp 

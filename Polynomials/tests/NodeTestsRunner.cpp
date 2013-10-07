@@ -1,3 +1,10 @@
+/*
+ * File:   NodeTestsRunner.cpp
+ * Author: Curtis
+ *
+ * Created on 6-Oct-2013, 8:39:42 PM
+ */
+
 #include <cppunit/BriefTestProgressListener.h>
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>

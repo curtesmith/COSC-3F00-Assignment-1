@@ -139,7 +139,7 @@ ${TESTDIR}/TestFiles/f3: ${TESTDIR}/tests/LinkedListTests.o ${TESTDIR}/tests/Lin
 
 ${TESTDIR}/TestFiles/f1: ${TESTDIR}/tests/NodeTests.o ${TESTDIR}/tests/NodeTestsRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} `cppunit-config --libs` `cppunit-config --libs` `cppunit-config --libs`   
+	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} `cppunit-config --libs` `cppunit-config --libs` `cppunit-config --libs` `cppunit-config --libs`   
 
 ${TESTDIR}/TestFiles/f5: ${TESTDIR}/tests/PolynomialTests.o ${TESTDIR}/tests/PolynomialTestsRunner.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
