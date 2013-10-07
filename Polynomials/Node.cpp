@@ -44,3 +44,11 @@ int Node::compareTo(Node* anotherNode) {
     else 
         return 0;          
 }
+
+std::string Node::toString() {
+    std::string result;
+    result.append(addressOfCoefficient->toString());
+    result.append("x");
+    result.append(addressOfExponent->toString());
+    return result;
+}

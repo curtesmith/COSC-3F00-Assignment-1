@@ -17,6 +17,7 @@ class NodeTests : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(calling_compareTo_against_a_smaller_node_should_return_positive);
     CPPUNIT_TEST(calling_compareTo_against_a_larger_node_should_return_negative);
     CPPUNIT_TEST(calling_compareTo_against_an_equal_node_should_return_zero);
+    CPPUNIT_TEST(calling_to_string_should_return_a_readable_form_of_the_node);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -31,6 +32,7 @@ private:
     void calling_compareTo_against_a_larger_node_should_return_negative();
     void calling_compareTo_against_an_equal_node_should_return_zero();
     Node* createNode(std::string coefficient, std::string exponent);
+    void calling_to_string_should_return_a_readable_form_of_the_node();
 };
 
 #endif	/* NODETESTS_H */

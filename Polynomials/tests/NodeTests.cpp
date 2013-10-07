@@ -1,10 +1,3 @@
-/*
- * File:   NodeTests.cpp
- * Author: Curtis
- *
- * Created on 6-Oct-2013, 8:39:42 PM
- */
-
 #include "NodeTests.h"
 #include "../Node.h"
 
@@ -46,4 +39,9 @@ void NodeTests::calling_compareTo_against_an_equal_node_should_return_zero() {
 
 Node* NodeTests::createNode(std::string coefficient, std::string exponent) {
     return new Node(new Coefficient(coefficient), new Exponent(exponent));
+}
+
+void NodeTests::calling_to_string_should_return_a_readable_form_of_the_node() {
+    Node* sut = createNode("2", "3");
+    CPPUNIT_ASSERT(sut->toString() == "2x3");
 }

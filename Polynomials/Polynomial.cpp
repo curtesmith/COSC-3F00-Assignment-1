@@ -47,11 +47,10 @@ std::string Polynomial::toString() {
     Node* node = *addressOfRootNodePointer;
     std::string polynomial = "";
     while(node != NULL) {        
-        polynomial.append(node->getAddressOfCoefficient()->toString());
-        polynomial.append("x");
-        polynomial.append(node->getAddressOfExponent()->toString());
-        polynomial.append(" ");
+        polynomial.append(node->toString());
         node = node->getAddressOfNextNode();
+        if(node != NULL)
+            polynomial.append(" ");
     }    
     return polynomial;
 }

@@ -33,5 +33,5 @@ void PolynomialTests::calling_toString_should_return_a_string_representation() {
     sut->fill(polynomial);
     std::string result = sut->toString();
     //std::cout << "\nresult is {" << result << "}\n";
-    CPPUNIT_ASSERT(result == "5x3 -4x2 -2x1 ");
+    CPPUNIT_ASSERT(result == "5x3 -4x2 -2x1");
 }

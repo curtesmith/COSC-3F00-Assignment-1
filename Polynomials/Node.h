@@ -14,6 +14,7 @@ public:
     Exponent* getAddressOfExponent();
     Node** getAddressOfNextNodePointer();
     int compareTo(Node* anotherNode);
+    std::string toString();
 private:
     Exponent* addressOfExponent;
     Coefficient* addressOfCoefficient;
