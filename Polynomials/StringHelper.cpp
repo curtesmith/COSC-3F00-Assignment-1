@@ -37,3 +37,9 @@ std::list<std::string> StringHelper::getListOfTokens(std::string message, std::s
 
     return tokens;
 }
+
+std::string StringHelper::convertIntToString(int i) {
+    std::ostringstream stream;
+    stream << i;
+    return stream.str();
+}

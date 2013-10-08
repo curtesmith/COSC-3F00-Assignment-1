@@ -24,3 +24,7 @@ int Coefficient::toInt() {
 std::string Coefficient::toString() {
     return value;
 }
+
+void Coefficient::setValue(int value) {
+    this->value = StringHelper::convertIntToString(value);
+}

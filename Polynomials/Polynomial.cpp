@@ -35,7 +35,7 @@ void Polynomial::fill(std::string s) {
         
         if (parts == MAX_PARTS) {
             Node* addressOfNode = new Node(coefficient, exponent);
-            this->getAddressOfLinkedList()->insertNode(&addressOfNode);
+            getAddressOfLinkedList()->insertNode(&addressOfNode);
             parts = 0;
         }        
     }  
@@ -43,7 +43,7 @@ void Polynomial::fill(std::string s) {
 }
 
 std::string Polynomial::toString() {
-    Node** addressOfRootNodePointer = this->getAddressOfLinkedList()->getAddressOfRootNodePointer();
+    Node** addressOfRootNodePointer = getAddressOfLinkedList()->getAddressOfRootNodePointer();
     Node* node = *addressOfRootNodePointer;
     std::string polynomial = "";
     while(node != NULL) {        

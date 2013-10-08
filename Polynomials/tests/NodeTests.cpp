@@ -45,3 +45,10 @@ void NodeTests::calling_to_string_should_return_a_readable_form_of_the_node() {
     Node* sut = createNode("2", "3");
     CPPUNIT_ASSERT(sut->toString() == "2x3");
 }
+
+void NodeTests::calling_add_should_add_the_coefficients_of_two_nodes_and_return_a_new_node() {
+    Node* sut = createNode("3", "2");
+    Node* anotherNode = createNode("2", "2");
+    Node* result = sut->add(anotherNode);
+    CPPUNIT_ASSERT(result->getAddressOfCoefficient()->toInt() == 5);
+}

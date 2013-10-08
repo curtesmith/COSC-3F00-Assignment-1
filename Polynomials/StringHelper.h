@@ -10,6 +10,7 @@ public:
     virtual ~StringHelper();
     static int convertStringToInt(std::string s);
     static std::list<std::string> getListOfTokens(std::string message, std::string delimiter);
+    static std::string convertIntToString(int i);
 private:
     
 };

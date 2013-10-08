@@ -10,6 +10,7 @@ public:
     virtual ~Coefficient();
     int toInt();
     std::string toString();
+    void setValue(int value);
 private:
     std::string value;
     void init(std::string value);

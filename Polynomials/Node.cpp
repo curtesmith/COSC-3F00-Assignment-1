@@ -52,3 +52,9 @@ std::string Node::toString() {
     result.append(addressOfExponent->toString());
     return result;
 }
+
+Node* Node::add(Node* anotherNode) {
+    int result = this->getAddressOfCoefficient()->toInt() + anotherNode->getAddressOfCoefficient()->toInt();
+    this->getAddressOfCoefficient()->setValue(result);
+    return this;
+}
