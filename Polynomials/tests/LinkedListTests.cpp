@@ -19,10 +19,6 @@ void LinkedListTests::setUp() {
 void LinkedListTests::tearDown() {
 }
 
-void LinkedListTests::calling_getLastNodePointer_should_return_a_pointer_to_the_rootPointer() {
-    LinkedList* sut = new LinkedList();
-    CPPUNIT_ASSERT(sut->getAddressOfRootNodePointer() == sut->getAddressOfLastNodePointer());
-}
 
 Node* LinkedListTests::createNode(std::string coefficient, std::string exponent) {
     return new Node(new Coefficient(coefficient), new Exponent(exponent));    

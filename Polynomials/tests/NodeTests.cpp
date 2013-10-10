@@ -50,5 +50,5 @@ void NodeTests::calling_add_should_add_the_coefficients_of_two_nodes_and_return_
     Node* sut = createNode("3", "2");
     Node* anotherNode = createNode("2", "2");
     Node* result = sut->add(anotherNode);
-    CPPUNIT_ASSERT(result->getAddressOfCoefficient()->toInt() == 5);
+    CPPUNIT_ASSERT(result->getCoefficient()->toInt() == 5);
 }

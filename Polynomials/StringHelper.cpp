@@ -2,17 +2,19 @@
 #include <string>
 #include <sstream>
 
-StringHelper::StringHelper() {
-}
 
-StringHelper::~StringHelper() {
-}
+StringHelper::StringHelper() { }
+
+
+StringHelper::~StringHelper() { }
+
 
 int StringHelper::convertStringToInt(std::string s) {
     int result;
     std::stringstream(s) >> result;
     return result;
 }
+
 
 std::list<std::string> StringHelper::getListOfTokens(std::string message, std::string delimiter) {
     std::list<std::string> tokens;
@@ -30,13 +32,14 @@ std::list<std::string> StringHelper::getListOfTokens(std::string message, std::s
             start = finish + 1;
         } else {
             if (start < message.length()) {
-                tokens.push_back(message.substr(start, message.length()-start));
+                tokens.push_back(message.substr(start, message.length() - start));
             }
         }
     }
 
     return tokens;
 }
+
 
 std::string StringHelper::convertIntToString(int i) {
     std::ostringstream stream;

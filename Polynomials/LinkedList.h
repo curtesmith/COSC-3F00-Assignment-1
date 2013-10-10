@@ -7,15 +7,12 @@ class LinkedList {
 public:
     LinkedList();
     virtual ~LinkedList();
-    Node** getAddressOfRootNodePointer();
-    void setRootNode(Node* rootNode);
-    void addNode(Node** node);
+    Node** getRootNodePointer();
     void insertNode(Node** newNode);
     int size();
-    Node** getAddressOfLastNodePointer();
-    Node** getAddressOfNextNodePointer(Node** node);
+    Node** getNextNodePointer(Node** node);
 private:
-    Node* addressOfRootNode;
+    Node* rootNode;
 };
 
 #endif	/* LINKEDLIST_H */

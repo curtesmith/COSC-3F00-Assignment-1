@@ -1,60 +1,59 @@
 #include "Node.h"
 #include <cstring>
 
+
 Node::Node(Coefficient* coefficient, Exponent* exponent) {
-    addressOfCoefficient = coefficient;
-    addressOfExponent = exponent;
-    addressOfNextNode = NULL;
+    this->coefficient = coefficient;
+    this->exponent = exponent;
+    this->nextNode = NULL;
 }
 
-Node::~Node() {
+
+Node::~Node() { }
+
+
+void Node::setNextNode(Node* nextNode) {
+    this->nextNode = nextNode;
 }
 
-void Node::setAddressOfNextNode(Node* nextNode) {
-    addressOfNextNode = nextNode;
+
+Node* Node::getNextNode() {
+    return this->nextNode;
 }
 
-Node* Node::getAddressOfNextNode() {
-    return addressOfNextNode;
+
+Coefficient* Node::getCoefficient() {
+    return this->coefficient;
 }
 
-Coefficient* Node::getAddressOfCoefficient() {
-    return addressOfCoefficient;
+
+Exponent* Node::getExponent() {
+    return this->exponent;
 }
 
-Exponent* Node::getAddressOfExponent() {
-    return addressOfExponent;
+
+Node** Node::getNextNodePointer() {
+    return &(this->nextNode);
 }
 
-Node** Node::getAddressOfNextNodePointer() {
-    return &addressOfNextNode;
-}
 
 int Node::compareTo(Node* anotherNode) {
-    Exponent* me = this->getAddressOfExponent();
-    Exponent* him = anotherNode->getAddressOfExponent();
-    int ime = me->toInt();
-    int ihim = him->toInt();
-    int difference = ime - ihim;
-    
-    if (difference < 0) 
-        return -1;
-    else if (difference > 0)
-        return 1;
-    else 
-        return 0;          
+    Exponent* exponent = this->getExponent();
+    return exponent->compareTo(anotherNode->getExponent());
 }
+
 
 std::string Node::toString() {
     std::string result;
-    result.append(addressOfCoefficient->toString());
+    result.append((*this).getCoefficient()->toString());
     result.append("x");
-    result.append(addressOfExponent->toString());
+    result.append((*this).getExponent()->toString());
     return result;
 }
 
+
 Node* Node::add(Node* anotherNode) {
-    int result = this->getAddressOfCoefficient()->toInt() + anotherNode->getAddressOfCoefficient()->toInt();
-    this->getAddressOfCoefficient()->setValue(result);
+    int result = this->getCoefficient()->toInt() + anotherNode->getCoefficient()->toInt();
+    this->getCoefficient()->setValue(result);
     return this;
 }

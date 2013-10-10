@@ -10,6 +10,7 @@ public:
     virtual ~Exponent();
     int toInt();
     std::string toString();
+    int compareTo(Exponent* anotherExponent);   
 private:
     std::string value;
     void init(std::string value);
