@@ -38,5 +38,5 @@ void PolynomialTests::calling_toString_should_return_a_string_representation() {
 
 
 void PolynomialTests::calling_merge_should_add_two_polynomials_together() {
-    
+    CPPUNIT_ASSERT(false);
 }

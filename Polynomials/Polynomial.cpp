@@ -58,3 +58,7 @@ std::string Polynomial::toString() {
     }
     return polynomial;
 }
+
+void Polynomial::merge(Polynomial* p) {
+    
+}

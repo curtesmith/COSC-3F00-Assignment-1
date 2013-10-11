@@ -12,6 +12,7 @@ public:
     LinkedList* getAddressOfLinkedList();
     void fill(std::string s);
     std::string toString();
+    void merge(Polynomial* p);
 private:
     LinkedList* addressOfLinkedList;
 };
