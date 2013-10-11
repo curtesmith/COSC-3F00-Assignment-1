@@ -35,3 +35,8 @@ void PolynomialTests::calling_toString_should_return_a_string_representation() {
     //std::cout << "\nresult is {" << result << "}\n";
     CPPUNIT_ASSERT(result == "5x3 -4x2 -2x1");
 }
+
+
+void PolynomialTests::calling_merge_should_add_two_polynomials_together() {
+    
+}
