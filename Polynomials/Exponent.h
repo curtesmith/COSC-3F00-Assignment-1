@@ -7,6 +7,7 @@ class Exponent {
 public:
     Exponent();
     Exponent(std::string value);
+    Exponent(Exponent* clone);
     virtual ~Exponent();
     int toInt();
     std::string toString();

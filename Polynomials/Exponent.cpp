@@ -13,6 +13,11 @@ Exponent::Exponent(std::string value) {
 }
 
 
+Exponent::Exponent(Exponent* clone) {
+    init(clone->toString());
+ }
+
+
 Exponent::~Exponent() { }
 
 
@@ -32,7 +37,7 @@ std::string Exponent::toString() {
 
 
 int Exponent::compareTo(Exponent* anotherExponent) {
-    if(this->toInt() < anotherExponent->toInt()) {
+    if (this->toInt() < anotherExponent->toInt()) {
         return -1;
     } else if (this->toInt() == anotherExponent->toInt()) {
         return 0;
