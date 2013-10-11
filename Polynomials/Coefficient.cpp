@@ -14,6 +14,9 @@ Coefficient::Coefficient(std::string value) {
     init(value);
 }
 
+Coefficient::Coefficient(Coefficient* clone) {
+    init(clone->toString());
+}
 
 void Coefficient::init(std::string value) {
     this->value = value;

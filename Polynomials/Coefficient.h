@@ -6,7 +6,8 @@
 class Coefficient {
 public:
     Coefficient();
-    Coefficient(std::string value);   
+    Coefficient(std::string value);
+    Coefficient(Coefficient *);
     virtual ~Coefficient();
     int toInt();
     std::string toString();

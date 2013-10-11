@@ -31,3 +31,9 @@ void CoefficientTests::setValue_should_update_the_value() {
     coefficient.setValue(3);
     CPPUNIT_ASSERT(coefficient.toInt() == 3);
 }
+
+void CoefficientTests::calling_constructor_with_a_coefficient_argument_should_clone_the_coefficient() {
+    Coefficient clone ("2");
+    Coefficient sut(clone);
+    CPPUNIT_ASSERT(&sut != &clone);
+}

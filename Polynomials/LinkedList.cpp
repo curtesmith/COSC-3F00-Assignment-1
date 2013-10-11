@@ -51,5 +51,9 @@ int LinkedList::size() {
 
 std::list<Node> LinkedList::toList() {
     std::list<Node> newList;
+    Node** node = this->getRootNodePointer();
+    while(*node != NULL) {
+        node = (*node)->getNextNodePointer();
+    }
     return newList;
 }
