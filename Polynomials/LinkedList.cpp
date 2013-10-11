@@ -53,6 +53,8 @@ std::list<Node> LinkedList::toList() {
     std::list<Node> newList;
     Node** node = this->getRootNodePointer();
     while(*node != NULL) {
+        Node newNode(**node);
+        newList.push_back(newNode);
         node = (*node)->getNextNodePointer();
     }
     return newList;
