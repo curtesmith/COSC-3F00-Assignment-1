@@ -48,3 +48,8 @@ int LinkedList::size() {
     }
     return size;
 }
+
+std::list<Node> LinkedList::toList() {
+    std::list<Node> newList;
+    return newList;
+}

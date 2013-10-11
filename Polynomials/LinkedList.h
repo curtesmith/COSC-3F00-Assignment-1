@@ -2,6 +2,7 @@
 #define	LINKEDLIST_H
 
 #include "Node.h"
+#include <list>
 
 class LinkedList {
 public:
@@ -11,6 +12,7 @@ public:
     void insertNode(Node** newNode);
     int size();
     Node** getNextNodePointer(Node** node);
+    std::list<Node> toList();
 private:
     Node* rootNode;
 };
