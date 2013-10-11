@@ -38,5 +38,8 @@ void PolynomialTests::calling_toString_should_return_a_string_representation() {
 
 
 void PolynomialTests::calling_merge_should_add_two_polynomials_together() {
-    CPPUNIT_ASSERT(false);
+    Polynomial p, sut;
+    p.fill("-4 2 5 3 -2 1");
+    sut.fill("-1 3");
+    CPPUNIT_ASSERT(sut.toString() == "4x3 -4x2 -2x1");
 }

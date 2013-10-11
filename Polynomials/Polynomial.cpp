@@ -60,5 +60,11 @@ std::string Polynomial::toString() {
 }
 
 void Polynomial::merge(Polynomial* p) {
-    
+    std::list<Node>nodes = p->getAddressOfLinkedList()->toList();
+    for(std::list<Node>::iterator i = nodes.begin(); i != nodes.end(); i++) {
+        Node node = *i;
+        Node* nodePointer = &node;
+        Node** pointerToNodePointer = &nodePointer;
+        this->getAddressOfLinkedList()->insertNode(pointerToNodePointer);
+    }
 }
