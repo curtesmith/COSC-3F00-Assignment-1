@@ -3,14 +3,21 @@
 
 
 Node::Node(Coefficient* coefficient, Exponent* exponent) {
-    this->coefficient = coefficient;
-    this->exponent = exponent;
-    this->nextNode = NULL;
+    init(coefficient, exponent);
+}
+
+Node::Node(Node* clone) {
+    init(new Coefficient(clone->getCoefficient()), new Exponent(clone->getExponent()));
 }
 
 
 Node::~Node() { }
 
+void Node::init(Coefficient* coefficient, Exponent* exponent) {
+    this->coefficient = coefficient;
+    this->exponent = exponent;
+    this->nextNode = NULL;   
+}
 
 void Node::setNextNode(Node* nextNode) {
     this->nextNode = nextNode;

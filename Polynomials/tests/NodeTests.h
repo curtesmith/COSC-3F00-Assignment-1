@@ -19,6 +19,7 @@ class NodeTests : public CPPUNIT_NS::TestFixture {
     CPPUNIT_TEST(calling_compareTo_against_an_equal_node_should_return_zero);
     CPPUNIT_TEST(calling_to_string_should_return_a_readable_form_of_the_node);
     CPPUNIT_TEST(calling_add_should_add_the_coefficients_of_two_nodes_and_return_a_new_node);
+    CPPUNIT_TEST(calling_constructor_with_node_should_clone_the_node);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -35,6 +36,7 @@ private:
     Node* createNode(std::string coefficient, std::string exponent);
     void calling_to_string_should_return_a_readable_form_of_the_node();
     void calling_add_should_add_the_coefficients_of_two_nodes_and_return_a_new_node();
+    void calling_constructor_with_node_should_clone_the_node();
 };
 
 #endif	/* NODETESTS_H */

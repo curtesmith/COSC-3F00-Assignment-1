@@ -7,6 +7,7 @@
 class Node {
 public:
     Node(Coefficient* coefficient, Exponent* exponent);
+    Node(Node* clone);
     virtual ~Node();
     void setNextNode(Node * nextNode);
     Node* getNextNode();
@@ -20,6 +21,7 @@ private:
     Exponent* exponent;
     Coefficient* coefficient;
     Node* nextNode;
+    void init(Coefficient* coefficient, Exponent* exponent);
 };
 
 #endif	/* NODE_H */

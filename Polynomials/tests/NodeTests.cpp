@@ -52,3 +52,9 @@ void NodeTests::calling_add_should_add_the_coefficients_of_two_nodes_and_return_
     Node* result = sut->add(anotherNode);
     CPPUNIT_ASSERT(result->getCoefficient()->toInt() == 5);
 }
+
+void NodeTests::calling_constructor_with_node_should_clone_the_node() {
+    Node* clone = createNode("3", "2");
+    Node sut(*clone);
+    CPPUNIT_ASSERT(&sut != clone);
+}
