@@ -9,12 +9,12 @@ class Polynomial {
 public:
     Polynomial();
     virtual ~Polynomial();
-    LinkedList* getAddressOfLinkedList();
+    LinkedList* getLinkedList();
     void fill(std::string s);
     std::string toString();
     void merge(Polynomial* p);
 private:
-    LinkedList* addressOfLinkedList;
+    LinkedList* linkedList;
 };
 
 #endif	/* POLYNOMIAL_H */

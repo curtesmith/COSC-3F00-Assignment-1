@@ -4,15 +4,15 @@
 
 
 Polynomial::Polynomial() {
-    this->addressOfLinkedList = new LinkedList();
+    this->linkedList = new LinkedList();
 }
 
 
 Polynomial::~Polynomial() { }
 
 
-LinkedList* Polynomial::getAddressOfLinkedList() {
-    return this->addressOfLinkedList;
+LinkedList* Polynomial::getLinkedList() {
+    return this->linkedList;
 }
 
 
@@ -38,7 +38,7 @@ void Polynomial::fill(std::string s) {
 
         if (parts == MAX_PARTS) {
             Node* addressOfNode = new Node(coefficient, exponent);
-            getAddressOfLinkedList()->insertNode(&addressOfNode);
+            getLinkedList()->insertNode(&addressOfNode);
             parts = 0;
         }
     }
@@ -47,7 +47,7 @@ void Polynomial::fill(std::string s) {
 
 
 std::string Polynomial::toString() {
-    Node** addressOfRootNodePointer = getAddressOfLinkedList()->getRootNodePointer();
+    Node** addressOfRootNodePointer = getLinkedList()->begin();
     Node* node = *addressOfRootNodePointer;
     std::string polynomial = "";
     while (node != NULL) {
@@ -60,11 +60,11 @@ std::string Polynomial::toString() {
 }
 
 void Polynomial::merge(Polynomial* p) {
-    std::list<Node>nodes = p->getAddressOfLinkedList()->toList();
+    std::list<Node>nodes = p->getLinkedList()->toList();
     for(std::list<Node>::iterator i = nodes.begin(); i != nodes.end(); i++) {
         Node node = *i;
         Node* nodePointer = &node;
         Node** pointerToNodePointer = &nodePointer;
-        this->getAddressOfLinkedList()->insertNode(pointerToNodePointer);
+        this->getLinkedList()->insertNode(pointerToNodePointer);
     }
 }

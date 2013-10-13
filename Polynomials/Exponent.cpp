@@ -15,7 +15,7 @@ Exponent::Exponent(std::string value) {
 
 Exponent::Exponent(Exponent* clone) {
     init(clone->toString());
- }
+}
 
 
 Exponent::~Exponent() { }

@@ -1,5 +1,5 @@
-build/Debug/MinGW-Windows/tests/tests/StringHelperTests.o: \
- tests/StringHelperTests.cpp tests/StringHelperTests.h \
+build/Debug/MinGW-Windows/tests/tests/PointerTests.o: \
+ tests/PointerTests.cpp tests/PointerTests.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/extensions/HelperMacros.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/TestCaller.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/Exception.h \
@@ -33,10 +33,10 @@ build/Debug/MinGW-Windows/tests/tests/StringHelperTests.o: \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/extensions/TestNamer.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/extensions/TestSuiteBuilderContext.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/portability/CppUnitMap.h \
- tests/../StringHelper.h tests/../Node.h tests/../Coefficient.h \
- tests/../Exponent.h
+ tests/../Node.h tests/../Coefficient.h tests/../Exponent.h \
+ tests/../TestHelper.h tests/../Node.h StringHelper.h Node.h
 
-tests/StringHelperTests.h:
+tests/PointerTests.h:
 
 ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/extensions/HelperMacros.h:
 
@@ -104,10 +104,16 @@ tests/StringHelperTests.h:
 
 ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/portability/CppUnitMap.h:
 
-tests/../StringHelper.h:
-
 tests/../Node.h:
 
 tests/../Coefficient.h:
 
 tests/../Exponent.h:
+
+tests/../TestHelper.h:
+
+tests/../Node.h:
+
+StringHelper.h:
+
+Node.h:

@@ -10,6 +10,7 @@ class LinkedListTests : public CPPUNIT_NS::TestFixture {
 
     CPPUNIT_TEST(calling_insertNode);
     CPPUNIT_TEST(calling_toList_should_return_a_list_of_nodes);
+    CPPUNIT_TEST(calling_getNode_at_two_should_give_the_second_node);
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -20,11 +21,11 @@ public:
     void tearDown();
 
 private:
-    void testMethod();
     void calling_insertNode();
     void calling_toList_should_return_a_list_of_nodes();
     Node* createNode(std::string coefficient, std::string exponent);
-    LinkedList* createLinkedList();
+    LinkedList* createLinkedListWithThreeNodes();
+    void calling_getNode_at_two_should_give_the_second_node();
 };
 
 #endif	/* LINKEDLISTTESTS_H */

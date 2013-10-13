@@ -6,6 +6,10 @@ Node::Node(Coefficient* coefficient, Exponent* exponent) {
     init(coefficient, exponent);
 }
 
+Node::Node() {
+    init(new Coefficient("0"), new Exponent("0"));
+}
+
 Node::Node(Node* clone) {
     init(new Coefficient(clone->getCoefficient()), new Exponent(clone->getExponent()));
 }
@@ -13,11 +17,13 @@ Node::Node(Node* clone) {
 
 Node::~Node() { }
 
+
 void Node::init(Coefficient* coefficient, Exponent* exponent) {
     this->coefficient = coefficient;
     this->exponent = exponent;
-    this->nextNode = NULL;   
+    this->nextNode = NULL;
 }
+
 
 void Node::setNextNode(Node* nextNode) {
     this->nextNode = nextNode;

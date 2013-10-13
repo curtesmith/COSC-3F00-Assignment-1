@@ -8,13 +8,15 @@ class LinkedList {
 public:
     LinkedList();
     virtual ~LinkedList();
-    Node** getRootNodePointer();
+    Node** begin();
     void insertNode(Node** newNode);
     int size();
     Node** getNextNodePointer(Node** node);
     std::list<Node> toList();
+    Node** getNode(int position);
+    bool end();
 private:
-    Node* rootNode;
+    Node* _begin;
 };
 
 #endif	/* LINKEDLIST_H */

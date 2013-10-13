@@ -46,3 +46,15 @@ std::string StringHelper::convertIntToString(int i) {
     stream << i;
     return stream.str();
 }
+
+std::string StringHelper::convertPointerToString(Node** pointer) {
+    std::ostringstream stream;
+    stream << pointer;
+    return stream.str();
+}
+
+std::string StringHelper::convertNodeToString(Node* node) {
+    std::ostringstream stream;
+    stream << node;
+    return stream.str();
+}

@@ -3,34 +3,39 @@
 
 
 LinkedList::LinkedList() {
-    this->rootNode = NULL;
+    this->_begin = NULL;
 }
 
 
 LinkedList::~LinkedList() { }
 
 
-Node** LinkedList::getRootNodePointer() {
-    return &rootNode;
+Node** LinkedList::begin() {
+    return &_begin;
 }
 
 
 void LinkedList::insertNode(Node** newNodePointer) {
-    Node** nodePointer = getRootNodePointer();
+    bool insertNode = true;
+    Node** nodePointer = begin();
     while (*nodePointer != NULL) {
         if ((*newNodePointer)->compareTo(*nodePointer) == 1) {
             break;
         } else if ((*newNodePointer)->compareTo(*nodePointer) == 0) {
-            // add the coefficents of the nodes
-            // update the coefficient of addressOfNode
+            Node* n = *nodePointer;
+            n->add(*newNodePointer);
+            insertNode = false;
             break;
         } else {
             nodePointer = this->getNextNodePointer(nodePointer);
         }
     }
-    Node* tempNode = *nodePointer;
-    *nodePointer = *newNodePointer;
-    (*newNodePointer)->setNextNode(tempNode);
+
+    if (insertNode) {
+        Node* tempNode = *nodePointer;
+        *nodePointer = *newNodePointer;
+        (*newNodePointer)->setNextNode(tempNode);
+    }
 }
 
 
@@ -41,7 +46,7 @@ Node** LinkedList::getNextNodePointer(Node** node) {
 
 int LinkedList::size() {
     int size = 0;
-    Node* node = this->rootNode;
+    Node* node = this->_begin;
     while (node != NULL) {
         size++;
         node = node->getNextNode();
@@ -49,13 +54,25 @@ int LinkedList::size() {
     return size;
 }
 
+
 std::list<Node> LinkedList::toList() {
     std::list<Node> newList;
-    Node** node = this->getRootNodePointer();
-    while(*node != NULL) {
-        Node newNode(**node);
+    Node** node = this->begin();
+    while (*node != NULL) {
+        Node newNode(*node);
         newList.push_back(newNode);
         node = (*node)->getNextNodePointer();
     }
     return newList;
 }
+
+
+Node** LinkedList::getNode(int position) {    
+    return this->begin();
+}
+
+
+bool LinkedList::end() {
+    return true;
+}
+

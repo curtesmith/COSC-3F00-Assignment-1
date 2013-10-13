@@ -35,7 +35,7 @@ build/Debug/MinGW-Windows/tests/tests/LinkedListTests.o: \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/portability/CppUnitMap.h \
  tests/../Node.h tests/../Coefficient.h tests/../Exponent.h \
  tests/../LinkedList.h tests/../Node.h tests/../Coefficient.h \
- tests/../Exponent.h
+ tests/../Exponent.h tests/../StringHelper.h
 
 tests/LinkedListTests.h:
 
@@ -118,3 +118,5 @@ tests/../Node.h:
 tests/../Coefficient.h:
 
 tests/../Exponent.h:
+
+tests/../StringHelper.h:
