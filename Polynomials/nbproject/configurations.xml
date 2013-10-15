@@ -7,7 +7,6 @@
       <itemPath>Coefficient.h</itemPath>
       <itemPath>Exponent.h</itemPath>
       <itemPath>LinkedList.h</itemPath>
-      <itemPath>NewLinkedList.h</itemPath>
       <itemPath>Node.h</itemPath>
       <itemPath>PointerHelper.h</itemPath>
       <itemPath>Polynomial.h</itemPath>
@@ -24,7 +23,6 @@
       <itemPath>Coefficient.cpp</itemPath>
       <itemPath>Exponent.cpp</itemPath>
       <itemPath>LinkedList.cpp</itemPath>
-      <itemPath>NewLinkedList.cpp</itemPath>
       <itemPath>Node.cpp</itemPath>
       <itemPath>PointerHelper.cpp</itemPath>
       <itemPath>Polynomial.cpp</itemPath>
@@ -52,21 +50,13 @@
         <itemPath>tests/ExponentTests.h</itemPath>
         <itemPath>tests/ExponentTestsRunner.cpp</itemPath>
       </logicalFolder>
-      <logicalFolder name="f3"
+      <logicalFolder name="f8"
                      displayName="LinkedListTests"
                      projectFiles="true"
                      kind="TEST">
+        <itemPath>tests/LinkListTestsRunner.cpp</itemPath>
         <itemPath>tests/LinkedListTests.cpp</itemPath>
         <itemPath>tests/LinkedListTests.h</itemPath>
-        <itemPath>tests/LinkedListTestsRunner.cpp</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f8"
-                     displayName="NewLinkedListTests"
-                     projectFiles="true"
-                     kind="TEST">
-        <itemPath>tests/NewLinkListTestsRunner.cpp</itemPath>
-        <itemPath>tests/NewLinkedListTests.cpp</itemPath>
-        <itemPath>tests/NewLinkedListTests.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1"
                      displayName="NodeTests"
@@ -143,10 +133,6 @@
       <item path="LinkedList.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="LinkedList.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="NewLinkedList.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="NewLinkedList.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Node.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -341,17 +327,11 @@
       </item>
       <item path="tests/ExponentTestsRunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="tests/LinkListTestsRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="tests/LinkedListTests.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/LinkedListTests.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="tests/LinkedListTestsRunner.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="tests/NewLinkListTestsRunner.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="tests/NewLinkedListTests.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="tests/NewLinkedListTests.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/NodeTests.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -410,10 +390,6 @@
       <item path="LinkedList.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="LinkedList.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="NewLinkedList.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="NewLinkedList.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Node.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -572,17 +548,11 @@
       </item>
       <item path="tests/ExponentTestsRunner.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="tests/LinkListTestsRunner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="tests/LinkedListTests.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tests/LinkedListTests.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="tests/LinkedListTestsRunner.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="tests/NewLinkListTestsRunner.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="tests/NewLinkedListTests.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="tests/NewLinkedListTests.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="tests/NodeTests.cpp" ex="false" tool="1" flavor2="0">
       </item>

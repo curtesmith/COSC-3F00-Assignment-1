@@ -24,7 +24,8 @@ void PolynomialTests::calling_fill_should_populate_the_nodes_of_the_linked_list(
     std::string polynomial = "2 3 4 2";
     Polynomial* sut = new Polynomial();
     sut->fill(polynomial);
-    CPPUNIT_ASSERT(sut->getLinkedList()->size() == 2);
+    int size = sut->getLinkedList()->size();
+    CPPUNIT_ASSERT_MESSAGE("At least the fill method worked", size == 2);
 }
 
 void PolynomialTests::calling_toString_should_return_a_string_representation() {
@@ -41,9 +42,10 @@ void PolynomialTests::calling_merge_should_add_two_polynomials_together() {
     Polynomial* sut = new Polynomial();
     p->fill("-4 2 5 3 -2 1");
     sut->fill("-1 3");
-    //sut->merge(p);
+    sut->merge(p);
+    std::string newPolynomial = sut->toString();
     //CPPUNIT_ASSERT_MESSAGE(p->toString(), p->toString() == "5x3 -4x2 -2x1");
-    //CPPUNIT_ASSERT_MESSAGE(sut->toString(), sut->toString() == "-1x3");
-    CPPUNIT_ASSERT(false);
+    CPPUNIT_ASSERT_MESSAGE(newPolynomial, newPolynomial == "4x3 -4x2 -2x1");
+    //CPPUNIT_ASSERT(false);
 
 }

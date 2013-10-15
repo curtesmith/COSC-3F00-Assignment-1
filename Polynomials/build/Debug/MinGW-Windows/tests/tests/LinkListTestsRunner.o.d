@@ -1,5 +1,5 @@
-build/Debug/MinGW-Windows/tests/tests/LinkedListTestsRunner.o: \
- tests/LinkedListTestsRunner.cpp \
+build/Debug/MinGW-Windows/tests/tests/LinkListTestsRunner.o: \
+ tests/LinkListTestsRunner.cpp \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/BriefTestProgressListener.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/TestListener.h \
  ../../../../../../Program\ Files\ (x86)/cppunit-1.13.1/include/cppunit/Portability.h \

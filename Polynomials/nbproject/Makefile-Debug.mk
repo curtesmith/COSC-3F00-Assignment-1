@@ -38,7 +38,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/Coefficient.o \
 	${OBJECTDIR}/Exponent.o \
 	${OBJECTDIR}/LinkedList.o \
-	${OBJECTDIR}/NewLinkedList.o \
 	${OBJECTDIR}/Node.o \
 	${OBJECTDIR}/PointerHelper.o \
 	${OBJECTDIR}/Polynomial.o \
@@ -53,7 +52,6 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 TESTFILES= \
 	${TESTDIR}/TestFiles/f2 \
 	${TESTDIR}/TestFiles/f4 \
-	${TESTDIR}/TestFiles/f3 \
 	${TESTDIR}/TestFiles/f8 \
 	${TESTDIR}/TestFiles/f1 \
 	${TESTDIR}/TestFiles/f7 \
@@ -101,11 +99,6 @@ ${OBJECTDIR}/LinkedList.o: LinkedList.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I../../../../../../MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits -std=c++11 -MMD -MP -MF $@.d -o ${OBJECTDIR}/LinkedList.o LinkedList.cpp
 
-${OBJECTDIR}/NewLinkedList.o: NewLinkedList.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I../../../../../../MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits -std=c++11 -MMD -MP -MF $@.d -o ${OBJECTDIR}/NewLinkedList.o NewLinkedList.cpp
-
 ${OBJECTDIR}/Node.o: Node.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
@@ -149,11 +142,7 @@ ${TESTDIR}/TestFiles/f4: ${TESTDIR}/tests/ExponentTests.o ${TESTDIR}/tests/Expon
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f4 $^ ${LDLIBSOPTIONS} `cppunit-config --libs` `cppunit-config --libs`   
 
-${TESTDIR}/TestFiles/f3: ${TESTDIR}/tests/LinkedListTests.o ${TESTDIR}/tests/LinkedListTestsRunner.o ${OBJECTFILES:%.o=%_nomain.o}
-	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f3 $^ ${LDLIBSOPTIONS} `cppunit-config --libs` `cppunit-config --libs`   
-
-${TESTDIR}/TestFiles/f8: ${TESTDIR}/tests/NewLinkListTestsRunner.o ${TESTDIR}/tests/NewLinkedListTests.o ${OBJECTFILES:%.o=%_nomain.o}
+${TESTDIR}/TestFiles/f8: ${TESTDIR}/tests/LinkListTestsRunner.o ${TESTDIR}/tests/LinkedListTests.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc}   -o ${TESTDIR}/TestFiles/f8 $^ ${LDLIBSOPTIONS} `cppunit-config --libs`   
 
@@ -198,28 +187,16 @@ ${TESTDIR}/tests/ExponentTestsRunner.o: tests/ExponentTestsRunner.cpp
 	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I../../../../../../MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits -I\"../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/src/cppunit\" -I\;. -std=c++11 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/ExponentTestsRunner.o tests/ExponentTestsRunner.cpp
 
 
+${TESTDIR}/tests/LinkListTestsRunner.o: tests/LinkListTestsRunner.cpp 
+	${MKDIR} -p ${TESTDIR}/tests
+	${RM} $@.d
+	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I../../../../../../MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits -I\"../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/src/cppunit\" -I\;. -std=c++11 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/LinkListTestsRunner.o tests/LinkListTestsRunner.cpp
+
+
 ${TESTDIR}/tests/LinkedListTests.o: tests/LinkedListTests.cpp 
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} $@.d
 	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I../../../../../../MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits -I\"../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/src/cppunit\" -I\;. -std=c++11 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/LinkedListTests.o tests/LinkedListTests.cpp
-
-
-${TESTDIR}/tests/LinkedListTestsRunner.o: tests/LinkedListTestsRunner.cpp 
-	${MKDIR} -p ${TESTDIR}/tests
-	${RM} $@.d
-	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I../../../../../../MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits -I\"../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/src/cppunit\" -I\;. -std=c++11 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/LinkedListTestsRunner.o tests/LinkedListTestsRunner.cpp
-
-
-${TESTDIR}/tests/NewLinkListTestsRunner.o: tests/NewLinkListTestsRunner.cpp 
-	${MKDIR} -p ${TESTDIR}/tests
-	${RM} $@.d
-	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I../../../../../../MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits -I\"../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/src/cppunit\" -I\;. -std=c++11 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/NewLinkListTestsRunner.o tests/NewLinkListTestsRunner.cpp
-
-
-${TESTDIR}/tests/NewLinkedListTests.o: tests/NewLinkedListTests.cpp 
-	${MKDIR} -p ${TESTDIR}/tests
-	${RM} $@.d
-	$(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I../../../../../../MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits -I\"../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/src/cppunit\" -I\;. -std=c++11 `cppunit-config --cflags` -MMD -MP -MF $@.d -o ${TESTDIR}/tests/NewLinkedListTests.o tests/NewLinkedListTests.cpp
 
 
 ${TESTDIR}/tests/NodeTests.o: tests/NodeTests.cpp 
@@ -309,19 +286,6 @@ ${OBJECTDIR}/LinkedList_nomain.o: ${OBJECTDIR}/LinkedList.o LinkedList.cpp
 	    ${CP} ${OBJECTDIR}/LinkedList.o ${OBJECTDIR}/LinkedList_nomain.o;\
 	fi
 
-${OBJECTDIR}/NewLinkedList_nomain.o: ${OBJECTDIR}/NewLinkedList.o NewLinkedList.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/NewLinkedList.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} $@.d;\
-	    $(COMPILE.cc) -g -I../../../../../../Program\ Files\ \(x86\)/cppunit-1.13.1/include -I../../../../../../MinGW/lib/gcc/mingw32/4.8.1/include/c++/bits -std=c++11 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/NewLinkedList_nomain.o NewLinkedList.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/NewLinkedList.o ${OBJECTDIR}/NewLinkedList_nomain.o;\
-	fi
-
 ${OBJECTDIR}/Node_nomain.o: ${OBJECTDIR}/Node.o Node.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	@NMOUTPUT=`${NM} ${OBJECTDIR}/Node.o`; \
@@ -406,7 +370,6 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 	then  \
 	    ${TESTDIR}/TestFiles/f2 || true; \
 	    ${TESTDIR}/TestFiles/f4 || true; \
-	    ${TESTDIR}/TestFiles/f3 || true; \
 	    ${TESTDIR}/TestFiles/f8 || true; \
 	    ${TESTDIR}/TestFiles/f1 || true; \
 	    ${TESTDIR}/TestFiles/f7 || true; \

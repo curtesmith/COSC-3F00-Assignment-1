@@ -1,78 +1,89 @@
 #include "LinkedList.h"
-#include "Node.h"
 
 
 LinkedList::LinkedList() {
-    this->_begin = NULL;
+    _begin = new Node();
+    _current = _begin;
 }
 
 
 LinkedList::~LinkedList() { }
 
 
-Node** LinkedList::begin() {
-    return &_begin;
+void LinkedList::begin() {
+    _current = _begin;
 }
 
 
-void LinkedList::insertNode(Node** newNodePointer) {
-    bool insertNode = true;
-    Node** nodePointer = begin();
-    while (*nodePointer != NULL) {
-        if ((*newNodePointer)->compareTo(*nodePointer) == 1) {
+Node* LinkedList::getNode(int position) {
+    int count = -1;
+    begin();
+    while (!end() && count < position) {
+        next();
+        count++;
+    }
+    return current();
+}
+
+
+Node* LinkedList::current() {
+    return _current;
+}
+
+
+void LinkedList::insert(Node* node) {
+    bool doInsert = true;
+    begin();        
+    while (current()->getNextNode() != NULL) {
+        if(node->compareTo(current()->getNextNode()) == 1) {
+            node->setNextNode(current()->getNextNode()); 
             break;
-        } else if ((*newNodePointer)->compareTo(*nodePointer) == 0) {
-            Node* n = *nodePointer;
-            n->add(*newNodePointer);
-            insertNode = false;
+        } else if (node->compareTo(current()->getNextNode()) == 0) {
+            current()->getNextNode()->add(node);
+            doInsert = false;
             break;
-        } else {
-            nodePointer = this->getNextNodePointer(nodePointer);
         }
+        next();
     }
-
-    if (insertNode) {
-        Node* tempNode = *nodePointer;
-        *nodePointer = *newNodePointer;
-        (*newNodePointer)->setNextNode(tempNode);
+    
+    if(doInsert) {
+        current()->setNextNode(node);     
     }
 }
 
 
-Node** LinkedList::getNextNodePointer(Node** node) {
-    return (*node)->getNextNodePointer();
-}
-
-
-int LinkedList::size() {
-    int size = 0;
-    Node* node = this->_begin;
-    while (node != NULL) {
-        size++;
-        node = node->getNextNode();
+void LinkedList::next() {
+    if(!end()) {
+        _current = _current->getNextNode();
     }
-    return size;
-}
-
-
-std::list<Node> LinkedList::toList() {
-    std::list<Node> newList;
-    Node** node = this->begin();
-    while (*node != NULL) {
-        Node newNode(*node);
-        newList.push_back(newNode);
-        node = (*node)->getNextNodePointer();
-    }
-    return newList;
-}
-
-
-Node** LinkedList::getNode(int position) {    
-    return this->begin();
 }
 
 
 bool LinkedList::end() {
-    return true;
+    return _current == NULL;
 }
 
+
+std::list<Node> LinkedList::toList() {
+    std::list<Node> nodeList;
+    begin();
+    next();
+    while (!end()) {
+        Node node(current());
+        nodeList.push_back(node);
+        next();
+    }
+    return nodeList;
+}
+
+
+int LinkedList::size() {
+    int count = 0;
+    begin();
+    next();
+    while(!end()) {
+        count++;
+        next();
+    }
+    return count;
+}

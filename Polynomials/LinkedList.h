@@ -1,5 +1,5 @@
-#ifndef LINKEDLIST_H
-#define	LINKEDLIST_H
+#ifndef NEWLINKEDLIST_H
+#define	NEWLINKEDLIST_H
 
 #include "Node.h"
 #include <list>
@@ -8,16 +8,18 @@ class LinkedList {
 public:
     LinkedList();
     virtual ~LinkedList();
-    Node** begin();
-    void insertNode(Node** newNode);
-    int size();
-    Node** getNextNodePointer(Node** node);
-    std::list<Node> toList();
-    Node** getNode(int position);
+    void begin();
+    Node* getNode(int position);
+    Node* current();
+    void insert(Node* node);
+    void next();
     bool end();
+    std::list<Node> toList();
+    int size();
 private:
     Node* _begin;
+    Node* _current;
 };
 
-#endif	/* LINKEDLIST_H */
+#endif	/* NEWLINKEDLIST_H */
 
